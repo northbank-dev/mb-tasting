@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Margarita Boys Tasting</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..900&family=Inter:wght@400;500;600&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+/* Layout: one centered column of sections, cards in auto-fit grids; brand palette from the Margarita Boys table card */
+:root {
+--bg: #F8F6F2;
+--panel: #FFFFFF;
+--sand: #F1EDE4;
+--ink: #22302A;
+--muted: #5B6862;
+--line: #E3DED3;
+--green: #3E7F6A;
+--green-deep: #2F6B58;
+--green-soft: #A8CDB6;
+--purple: #6B57D1;
+--purple-soft: #D9D1FF;
+--sun: #FFDA6B;
+--sky: #9FD8E5;
+--red: #C2463A;
+--red-soft: #F3C9C2;
+--font-display: "Archivo", "Arial Narrow", system-ui, sans-serif;
+--font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+--font-script: "Caveat", "Comic Sans MS", cursive;
+color-scheme: light;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 15px; line-height: 1.5; -webkit-text-size-adjust: 100%; }
+.wrap { max-width: 1120px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 0 64px; display: flex; flex-direction: column; gap: 56px; }
+/* Header */
+.hero { position: relative; overflow: hidden; background: var(--sand); }
+.hero-inner { max-width: 1120px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 36px 40px; position: relative; display: flex; flex-direction: column; gap: 18px; }
+.sun { position: absolute; top: -120px; right: -90px; width: 300px; height: 300px; border-radius: 50%; background: var(--sun); outline: 2px dashed #F1C94A; outline-offset: -6px; }
+.brand { display: flex; align-items: center; gap: 14px; position: relative; }
+.brand-name { font-family: var(--font-display); font-stretch: 125%; font-weight: 900; font-size: 20px; letter-spacing: .06em; color: var(--green); }
+.brand-sub { font-size: 12px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.kicker { font-family: var(--font-script); font-size: 30px; font-weight: 700; color: var(--purple); line-height: 1; position: relative; }
+h1 { margin: 0; font-family: var(--font-display); font-stretch: 118%; font-weight: 900; font-size: clamp(34px, 6vw, 58px); line-height: 1; letter-spacing: -.01em; color: var(--green-deep); text-wrap: balance; position: relative; }
+.hero-meta { color: var(--muted); font-size: 14px; position: relative; }
+.hero-actions { position: relative; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; }
+.refresh { display: inline-flex; align-items: center; gap: 6px; background: var(--green); color: #fff; text-decoration: none; font-weight: 600; font-size: 14px; padding: 9px 16px; border-radius: 999px; }
+.refresh:hover, .refresh:focus-visible { background: var(--green-deep); outline: 2px solid var(--green-soft); outline-offset: 2px; }
+.wave { display: block; width: 100%; height: 24px; }
+/* Sections */
+section { display: flex; flex-direction: column; gap: 18px; scroll-margin-top: 64px; }
+.sec-head { display: flex; flex-direction: column; gap: 4px; max-width: 70ch; }
+h2 { margin: 0; font-family: var(--font-display); font-stretch: 112%; font-weight: 800; font-size: clamp(22px, 3vw, 28px); line-height: 1.15; text-wrap: balance; }
+h3 { margin: 0; font-size: 15px; font-weight: 600; }
+.note { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.45; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 16px; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 20px; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+/* Nav */
+nav.toc { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+nav.toc .row { max-width: 1120px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: flex; gap: 6px; overflow-x: auto; padding-block: 10px; scrollbar-width: none; }
+nav.toc a { flex: none; text-decoration: none; color: var(--ink); font-size: 13px; font-weight: 500; padding: 6px 12px; border-radius: 999px; background: var(--sand); }
+nav.toc a:hover, nav.toc a:focus-visible { background: var(--green-soft); outline: none; }
+/* Takeaways */
+.takeaways { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 12px; margin: 0; padding: 0; list-style: none; }
+.takeaways li { background: var(--panel); border: 1px solid var(--line); border-left: 4px solid var(--green); border-radius: 14px; padding: 14px 16px; line-height: 1.45; }
+.takeaways li.warn { border-left-color: var(--red); }
+.takeaways li.idea { border-left-color: var(--purple); }
+.takeaways b { font-weight: 600; }
+/* Tiles */
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 165px), 1fr)); gap: 12px; }
+.tile { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 4px; }
+.tile .k { font-size: 12px; color: var(--muted); }
+.tile .v { font-family: var(--font-display); font-stretch: 112%; font-weight: 800; font-size: 28px; line-height: 1.1; color: var(--green-deep); font-variant-numeric: tabular-nums; }
+.tile .s { font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+/* Bars */
+.bars { display: flex; flex-direction: column; gap: 8px; }
+.bar-row { display: grid; grid-template-columns: minmax(0, 11rem) minmax(0, 1fr) 4.5rem; gap: 10px; align-items: center; font-size: 13px; }
+.bar-label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bar-track { position: relative; height: 22px; background: var(--sand); border-radius: 6px; }
+.bar-fill { position: absolute; inset: 0 auto 0 0; border-radius: 6px; background: var(--green); min-width: 2px; }
+.bar-fill.muted { background: var(--green-soft); }
+.bar-fill.bad { background: var(--red); }
+.bar-fill.purple { background: var(--purple); }
+.bar-val { font-size: 12px; font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
+@media (max-width: 480px) { .bar-row { grid-template-columns: minmax(0, 7.5rem) minmax(0, 1fr) 3.8rem; gap: 8px; } }
+/* Stacked bars */
+.stack { display: flex; height: 22px; border-radius: 6px; overflow: hidden; background: var(--sand); }
+.stack span { display: block; height: 100%; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 12px; color: var(--muted); }
+.legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+/* Tables */
+.tablewrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+table { border-collapse: collapse; width: 100%; font-size: 13px; font-variant-numeric: tabular-nums; }
+th, td { padding: 8px 10px; text-align: right; border-bottom: 1px solid var(--line); white-space: nowrap; }
+th { color: var(--muted); font-weight: 500; font-size: 12px; vertical-align: bottom; }
+th:first-child, td:first-child { text-align: left; position: sticky; left: 0; background: var(--panel); }
+td.rank-1 { font-weight: 700; color: var(--green-deep); }
+.heat td { text-align: center; }
+.heat td:first-child { text-align: left; }
+.heat td.zero { color: #B9B3A6; }
+.flv { font-weight: 500; }
+/* Comments */
+.quotes { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 12px; }
+.quote { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 8px; }
+.quote p { margin: 0; white-space: pre-line; line-height: 1.5; }
+.quote .tag { align-self: flex-start; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--purple); background: var(--purple-soft); padding: 2px 8px; border-radius: 999px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { background: var(--panel); border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; font-size: 14px; }
+/* Respondents */
+.people { display: flex; flex-direction: column; gap: 10px; }
+details.person { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; }
+details.person summary { cursor: pointer; padding: 14px 16px; display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: baseline; list-style: none; }
+details.person summary::-webkit-details-marker { display: none; }
+details.person summary::before { content: "+"; font-weight: 700; color: var(--green); width: 1em; }
+details.person[open] summary::before { content: "−"; }
+details.person summary:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; border-radius: 14px; }
+.p-name { font-weight: 600; }
+.p-meta { color: var(--muted); font-size: 13px; }
+.qa { margin: 0; padding: 0 16px 16px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 0; }
+.qa div { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 12px; padding: 8px 0; border-top: 1px solid var(--line); font-size: 13px; }
+.qa dt { color: var(--muted); }
+.qa dd { margin: 0; }
+@media (max-width: 560px) { .qa div { grid-template-columns: minmax(0, 1fr); gap: 2px; } }
+footer { color: var(--muted); font-size: 13px; text-align: center; display: flex; flex-direction: column; gap: 4px; align-items: center; }
+footer .script { font-family: var(--font-script); font-size: 28px; font-weight: 700; color: var(--green-deep); }
+.loading { color: var(--muted); }
+.error { color: var(--red); }
+@media (prefers-reduced-motion: no-preference) { .bar-fill, .stack span { transition: width .6s cubic-bezier(.2,.7,.2,1); } }
+</style>
+</head>
+<body>
+<header class="hero">
+<div class="sun" aria-hidden="true"></div>
+<div class="hero-inner">
+<div class="brand">
+<svg role="img" aria-label="Margarita Boys Logo" width="46" height="54" viewBox="0 0 54 64">
+<path d="M27 40 C 22 28, 14 22, 6 20 C 15 26, 19 32, 22 40" fill="none" stroke="#3E7F6A" stroke-width="2.4" stroke-linecap="round"/>
+<path d="M27 40 C 27 26, 28 14, 31 4 C 31 16, 30 28, 29 40" fill="none" stroke="#3E7F6A" stroke-width="2.4" stroke-linecap="round"/>
+<path d="M27 40 C 33 29, 41 24, 49 23 C 40 28, 35 33, 32 40" fill="none" stroke="#3E7F6A" stroke-width="2.4" stroke-linecap="round"/>
+<path d="M4 34 L 50 34 L 27 50 Z" fill="none" stroke="#7B68D9" stroke-width="2.4" stroke-linejoin="round"/>
+<path d="M27 50 L 27 60 M 18 61 L 36 61" fill="none" stroke="#7B68D9" stroke-width="2.4" stroke-linecap="round"/>
+</svg>
+<div>
+<div class="brand-name">MARGARITA BOYS</div>
+<div class="brand-sub">Frozen Margaritas · Zürich</div>
+</div>
+</div>
+<div class="kicker">Tasting · Samstag, 17.10.2026</div>
+<h1>Was unsere Gäste sagen</h1>
+<div class="hero-meta" id="hero-meta">Daten werden geladen …</div>
+<div class="hero-actions"><a class="refresh" href="https://github.com/northbank-dev/mb-tasting/actions/workflows/update.yml" target="_blank" rel="noopener">↻ Daten aktualisieren</a><span class="note">Öffnet GitHub: dort «Run workflow» klicken, nach etwa 2 Minuten diese Seite neu laden.</span></div>
+</div>
+<svg class="wave" viewBox="0 0 1200 24" preserveAspectRatio="none" aria-hidden="true"><path d="M0 12 C 50 0, 100 0, 150 12 S 250 24, 300 12 S 400 0, 450 12 S 550 24, 600 12 S 700 0, 750 12 S 850 24, 900 12 S 1000 0, 1050 12 S 1150 24, 1200 12" fill="none" stroke="#9FD8E5" stroke-width="3"/></svg>
+</header>
+<nav class="toc" aria-label="Abschnitte"><div class="row">
+<a href="#fazit">Fazit</a><a href="#flavors">Flavors</a><a href="#feinschliff">Feinschliff</a><a href="#kraeuter">Kräuter</a><a href="#preis">Preis</a><a href="#moment">Wo und wann</a><a href="#stimmen">Kommentare</a><a href="#einzeln">Alle Antworten</a><a href="#methode">Über die Umfrage</a>
+</div></nav>
+<main class="wrap" id="app">
+<section id="fazit" style="margin-top:32px">
+<div class="sec-head"><h2>Das Wichtigste</h2><p class="note">Automatisch aus den Antworten berechnet.</p></div>
+<ul class="takeaways" id="takeaways"><li class="loading">Lädt …</li></ul>
+<div class="tiles" id="tiles"></div>
+</section>
+<section id="flavors">
+<div class="sec-head"><h2>Die 9 Flavors im Vergleich</h2><p class="note">Sortiert nach dem Ø Platz in der grossen Rangliste, in der jeder Gast alle 9 Flavors ordnen musste (1 = Liebling, 9 = Schlusslicht). Die Sterne waren freiwillig.</p></div>
+<div class="grid">
+<div class="card"><h3>Ø Platz in der Rangliste</h3><p class="note">Kürzer ist besser.</p><div class="bars" id="bars-rank"></div></div>
+<div class="card"><h3>Ø Sterne (1 bis 5)</h3><p class="note">Nur wer den Flavor bewertet hat.</p><div class="bars" id="bars-stars"></div></div>
+</div>
+<div class="card"><h3>Wie oft auf Platz 1, 2 und 3?</h3><p class="note">Aus den drei Auswahllisten «Deine Top 3».</p>
+<div class="legend"><span><i style="background:var(--green-deep)"></i>Platz 1</span><span><i style="background:var(--green)"></i>Platz 2</span><span><i style="background:var(--green-soft)"></i>Platz 3</span></div>
+<div class="bars" id="bars-top"></div></div>
+<div class="card"><h3>Sterne-Verteilung pro Flavor</h3>
+<div class="legend"><span><i style="background:var(--red)"></i>1</span><span><i style="background:var(--red-soft)"></i>2</span><span><i style="background:#E9E3D6"></i>3</span><span><i style="background:var(--green-soft)"></i>4</span><span><i style="background:var(--green)"></i>5 Sterne</span></div>
+<div class="bars" id="bars-dist"></div></div>
+<div class="card"><h3>Alle Kennzahlen pro Flavor</h3><p class="note">«Letzte 3» heisst Platz 7 bis 9 in der Rangliste.</p>
+<div class="tablewrap"><table id="tbl-flavors"></table></div></div>
+</section>
+<section id="feinschliff">
+<div class="sec-head"><h2>Feinschliff pro Flavor</h2><p class="note">Was die Gäste pro Flavor ändern würden. Mehrfachnennungen möglich, die Zahl ist die Anzahl Gäste. Grün = «Perfekt so», je dunkler, desto öfter.</p></div>
+<div class="card"><div class="tablewrap"><table class="heat" id="tbl-heat"></table></div></div>
+</section>
+<section id="kraeuter">
+<div class="sec-head"><h2>Kräuter und alkoholfrei</h2></div>
+<div class="grid">
+<div class="card"><h3>Minze</h3><div class="bars" id="bars-minze"></div></div>
+<div class="card"><h3>Basilikum</h3><div class="bars" id="bars-basil"></div></div>
+<div class="card"><h3>Würdest du auch eine alkoholfreie Version trinken?</h3><div class="bars" id="bars-nonalc"></div></div>
+</div>
+</section>
+<section id="preis">
+<div class="sec-head"><h2>Preis</h2><p class="note">Wunschpreis und Schmerzgrenze für einen Becher an einem Event, dazu der Liter-Pitcher.</p></div>
+<div class="grid">
+<div class="card"><h3>Was würdest du für einen Becher zahlen?</h3><div class="bars" id="bars-price"></div></div>
+<div class="card"><h3>Ab welchem Preis auf keinen Fall mehr?</h3><div class="bars" id="bars-max"></div></div>
+</div>
+<div class="grid">
+<div class="card"><h3>Wer kauft bei welchem Becherpreis noch?</h3><p class="note">Anteil der Gäste, deren Schmerzgrenze über diesem Preis liegt.</p><div class="bars" id="bars-buyers"></div></div>
+<div class="card"><h3>Liter-Pitcher zum Teilen (ca. 4 Becher)</h3><p class="note">Freiwillige Frage.</p><div class="bars" id="bars-pitcher"></div></div>
+</div>
+</section>
+<section id="moment">
+<div class="sec-head"><h2>Wo, wann und wie viele</h2><p class="note">Ort und Zeit mit Mehrfachauswahl.</p></div>
+<div class="grid">
+<div class="card"><h3>Wo würdest du einen trinken?</h3><div class="bars" id="bars-where"></div></div>
+<div class="card"><h3>Wann am liebsten?</h3><div class="bars" id="bars-when"></div></div>
+<div class="card"><h3>Wie viele an einem Anlass?</h3><div class="bars" id="bars-many"></div></div>
+</div>
+</section>
+<section id="stimmen">
+<div class="sec-head"><h2>Was die Gäste geschrieben haben</h2><p class="note">Alle offenen Antworten im Original.</p></div>
+<div class="card"><h3>Welcher Flavor fehlt noch?</h3><div class="chips" id="chips-missing"></div></div>
+<div class="quotes" id="quotes"></div>
+</section>
+<section id="einzeln">
+<div class="sec-head"><h2>Alle Antworten einzeln</h2><p class="note">Jeder Gast anonym als Nummer, in der Reihenfolge des Eingangs. Antippen zum Aufklappen.</p></div>
+<div class="people" id="people"></div>
+</section>
+<section id="methode">
+<div class="sec-head"><h2>Über die Umfrage</h2></div>
+<div class="card">
+<p style="margin:0">Die Gäste des Tastings vom 17. Oktober 2026 haben nach dem Probieren per QR-Code eine kurze Umfrage auf Tally ausgefüllt, wahlweise auf Deutsch oder Englisch. Die Antworten sind anonym. Englische Antworten sind für die Diagramme auf die deutschen Optionen abgebildet, die Kommentare stehen im Original.</p>
+<p class="note">Die Gäste waren Freunde und Familie, die Zahlen sind deshalb eher wohlwollend und klein. Die Schmerzgrenze beim Preis ist aussagekräftiger als der Wunschpreis.</p>
+<p class="note" id="method-meta"></p>
+</div>
+</section>
+<footer>
+<div class="script">Stay Salty Stay Frozen</div>
+<div>Lucas, Livia &amp; Mo</div>
+</footer>
+</main>
+<script>
+(() => {
+const FLAVORS = ['Erdbeer', 'Pfirsich', 'Kirsche-Vanille', 'Blutorange', 'Grapefruit', 'Mango-Passion', 'Ananas-Kokos', 'Litschi', 'Wassermelone'];
+const EMOJI = { Erdbeer: '🍓', Pfirsich: '🍑', 'Kirsche-Vanille': '🍒', Blutorange: '🍊', Grapefruit: '🍋', 'Mango-Passion': '🥭', 'Ananas-Kokos': '🍍', Litschi: '🤍', Wassermelone: '🍉' };
+const FL = { Erdbeer: 'Erdbeer', Strawberry: 'Erdbeer', Pfirsich: 'Pfirsich', Peach: 'Pfirsich', 'Kirsche-Vanille': 'Kirsche-Vanille', 'Cherry-Vanilla': 'Kirsche-Vanille', Blutorange: 'Blutorange', 'Blood orange': 'Blutorange', Grapefruit: 'Grapefruit', 'Mango-Passion': 'Mango-Passion', 'Ananas-Kokos': 'Ananas-Kokos', 'Pineapple-Coconut': 'Ananas-Kokos', Litschi: 'Litschi', Lychee: 'Litschi', Wassermelone: 'Wassermelone', Watermelon: 'Wassermelone', Keiner: 'Keiner', None: 'Keiner' };
+const EN = { 'Perfect as is': 'Perfekt so', 'Too sweet': 'Zu süss', 'Not sweet enough': 'Zu wenig süss', 'Too sour': 'Zu sauer', 'Too strong': 'Zu stark', 'Too mild': 'Zu mild', 'More fruit': 'Mehr Frucht', 'Too icy': 'Zu eisig', 'Too liquid': 'Zu flüssig', 'Better with': 'Besser mit', 'No difference': 'Kein Unterschied', 'Rather without': 'Lieber ohne', 'Didn’t try': 'Nicht probiert', Yes: 'Ja', Maybe: 'Vielleicht', No: 'Nein', 'Festival or open air': 'Festival oder Open Air', 'Market or street food': 'Markt oder Street Food', 'At the lake or a lido': 'Am See oder in der Badi', 'Private party or wedding': 'Private Party oder Hochzeit', 'Company event': 'Firmenevent', 'Bar or club': 'Bar oder Club', 'In the afternoon': 'Am Nachmittag', 'Early evening (5 to 8 pm)': 'Zum Apéro (17 bis 20 Uhr)', 'In the evening and at night': 'Am Abend und in der Nacht', '3 or more': '3 oder mehr', Other: 'Anderes' };
+const ORDER = {
+price: ['10 bis 12 CHF', '12 bis 14 CHF', '14 bis 16 CHF', '16 bis 18 CHF', '18 bis 20 CHF', '20 bis 22 CHF'],
+maxprice: ['Ab 14 CHF', 'Ab 16 CHF', 'Ab 18 CHF', 'Ab 20 CHF', 'Ab 22 CHF', 'Ab 25 CHF'],
+pitcher: ['30 bis 40 CHF', '40 bis 50 CHF'],
+where: ['Festival oder Open Air', 'Markt oder Street Food', 'Am See oder in der Badi', 'Private Party oder Hochzeit', 'Firmenevent', 'Bar oder Club'],
+when: ['Am Nachmittag', 'Zum Apéro (17 bis 20 Uhr)', 'Am Abend und in der Nacht'],
+many: ['1', '2', '3 oder mehr'],
+nonalc: ['Ja', 'Vielleicht', 'Nein'],
+herb_Minze: ['Besser mit', 'Kein Unterschied', 'Lieber ohne', 'Nicht probiert'],
+herb_Basilikum: ['Besser mit', 'Kein Unterschied', 'Lieber ohne', 'Nicht probiert'],
+};
+const CHANGES = ['Perfekt so', 'Zu süss', 'Zu wenig süss', 'Zu sauer', 'Zu stark', 'Zu mild', 'Mehr Frucht', 'Zu eisig', 'Zu flüssig'];
+const clean = (s) => String(s).replace(/^[^A-Za-zÄÖÜäöü0-9]+/, '').trim();
+const fl = (s) => FL[clean(s)] || clean(s);
+const tr = (s) => {
+s = String(s);
+if (EN[s]) return EN[s];
+let m = s.match(/^CHF (\d+) to (\d+)$/); if (m) return m[1] + ' bis ' + m[2] + ' CHF';
+m = s.match(/^From CHF (\d+)$/); if (m) return 'Ab ' + m[1] + ' CHF';
+return s;
+};
+const kind = (r) => {
+const l = String(r.question);
+if (/^Sprache/.test(l)) return 'lang';
+if (r.type === 'RATING') return 'stars';
+if (r.type === 'DROPDOWN') return 'top';
+if (r.type === 'RANKING') return 'rank';
+if (/überrascht|surprised/.test(l)) return 'surprised';
+if (/nicht deins|your thing/.test(l)) return 'notmine';
+if (r.type === 'MULTI_SELECT') return 'change';
+if (r.type === 'MULTIPLE_CHOICE' && /Minze|Mint/.test(l)) return 'herb_Minze';
+if (r.type === 'MULTIPLE_CHOICE' && /Basilikum|Basil/.test(l)) return 'herb_Basilikum';
+if (/alkoholfrei|alcohol-free/.test(l)) return 'nonalc';
+if (/auf keinen Fall|definitely not/.test(l)) return 'maxprice';
+if (/Pitcher|pitcher/.test(l)) return 'pitcher';
+if (/Event für einen|What would you pay/.test(l)) return 'price';
+if (/^Wo |^Where/.test(l)) return 'where';
+if (/^Wann|^When/.test(l)) return 'when';
+if (/Wie viele|How many/.test(l)) return 'many';
+if (/zu einem Flavor|about a flavor/.test(l)) return 'text_flavor';
+if (/fehlt dir|are we missing/.test(l)) return 'text_missing';
+if (/Sonst noch|Anything else about our drinks/.test(l)) return 'text_other';
+return 'other';
+};
+const el = (tag, attrs = {}, ...kids) => {
+const n = document.createElement(tag);
+Object.entries(attrs).forEach(([k, v]) => { if (k === 'class') n.className = v; else if (k === 'style') n.style.cssText = v; else n.setAttribute(k, v); });
+kids.flat().forEach((c) => n.append(c instanceof Node ? c : document.createTextNode(String(c))));
+return n;
+};
+const $ = (id) => document.getElementById(id);
+const fmt = (v, d = 2) => (v == null ? '–' : v.toFixed(d));
+const pct = (v) => Math.round(v * 100) + '%';
+const mean = (a) => (a.length ? a.reduce((s, x) => s + x, 0) / a.length : null);
+const bars = (id, items, opt = {}) => {
+const box = $(id); box.replaceChildren();
+const max = opt.max || Math.max(1, ...items.map((d) => d.value || 0));
+items.forEach((d) => {
+const w = Math.max(0, Math.min(1, (d.value || 0) / max));
+const fill = el('div', { class: 'bar-fill ' + (d.cls || ''), style: `width:${(w * 100).toFixed(1)}%` });
+const val = el('span', { class: 'bar-val' }, d.text);
+box.append(el('div', { class: 'bar-row', title: d.tip || '' }, el('span', { class: 'bar-label' }, d.label), el('div', { class: 'bar-track' }, fill), val));
+});
+};
+const stacked = (id, rows) => {
+const box = $(id); box.replaceChildren();
+const max = Math.max(1, ...rows.map((r) => r.parts.reduce((s, p) => s + p.v, 0)));
+rows.forEach((r) => {
+const total = r.parts.reduce((s, p) => s + p.v, 0);
+const stack = el('div', { class: 'stack', style: `width:${((total / max) * 100).toFixed(1)}%;min-width:${total ? '4px' : '0'}` });
+r.parts.forEach((p) => { if (p.v) stack.append(el('span', { style: `width:${((p.v / total) * 100).toFixed(2)}%;background:${p.c}`, title: `${p.n}: ${p.v}` })); });
+const track = el('div', { class: 'bar-track', style: 'background:transparent;display:flex;align-items:center' }, stack);
+box.append(el('div', { class: 'bar-row' }, el('span', { class: 'bar-label' }, r.label), track, el('span', { class: 'bar-val' }, r.text)));
+});
+};
+const render = (raw, meta) => {
+const lang = {};
+raw.forEach((r) => { if (kind(r) === 'lang') lang[r.submission] = r.answer === 'English' ? 'EN' : 'DE'; });
+const N = raw.map((r) => {
+const q = kind(r);
+let item = null; let pos = r.position; let value = r.answer;
+if (q === 'stars') { item = fl(r.question); value = Number(r.answer); }
+else if (q === 'top') { const m = String(r.question).match(/(\d)\s*$/); pos = m ? Number(m[1]) : null; value = fl(r.answer); }
+else if (q === 'rank' || q === 'surprised' || q === 'notmine') value = fl(r.answer);
+else if (q === 'change') { item = fl(String(r.question).split(':')[0]); value = tr(r.answer); }
+else if (q.startsWith('text_') || q === 'lang') value = String(r.answer);
+else value = tr(r.answer);
+return { sub: r.submission, at: r.submittedAt, lang: lang[r.submission] || 'DE', q, item, pos, value, question: r.question, raw: r.answer };
+});
+const subs = [...new Set(N.map((r) => r.sub))];
+const n = subs.length;
+const subsWith = (pred) => new Set(N.filter(pred).map((r) => r.sub)).size;
+// Per flavor
+const F = FLAVORS.map((f) => {
+const st = N.filter((r) => r.q === 'stars' && r.item === f).map((r) => r.value);
+const rk = N.filter((r) => r.q === 'rank' && r.value === f).map((r) => r.pos);
+const dist = [1, 2, 3, 4, 5].map((s) => st.filter((x) => x === s).length);
+return {
+f, stars: mean(st), ratings: st.length, rank: mean(rk), dist,
+p1: subsWith((r) => r.q === 'top' && r.pos === 1 && r.value === f),
+p2: subsWith((r) => r.q === 'top' && r.pos === 2 && r.value === f),
+p3: subsWith((r) => r.q === 'top' && r.pos === 3 && r.value === f),
+top3: subsWith((r) => r.q === 'top' && r.value === f),
+bottom3: rk.filter((p) => p >= 7).length,
+surprised: subsWith((r) => r.q === 'surprised' && r.value === f),
+notmine: subsWith((r) => r.q === 'notmine' && r.value === f),
+changes: Object.fromEntries(CHANGES.map((c) => [c, subsWith((r) => r.q === 'change' && r.item === f && r.value === c)])),
+};
+}).sort((a, b) => (a.rank ?? 99) - (b.rank ?? 99));
+const best = F[0]; const worst = F[F.length - 1];
+const mostFirst = [...F].sort((a, b) => b.p1 - a.p1)[0];
+const label = (f) => (EMOJI[f] ? EMOJI[f] + ' ' : '') + f;
+// Choices
+const C = (q) => {
+const rows = N.filter((r) => r.q === q);
+const total = new Set(rows.map((r) => r.sub)).size;
+const opts = (ORDER[q] || []).concat([...new Set(rows.map((r) => r.value))].filter((v) => !(ORDER[q] || []).includes(v)));
+return { total, rows: opts.map((o) => ({ o, n: new Set(rows.filter((r) => r.value === o).map((r) => r.sub)).size })) };
+};
+const choiceBars = (id, q, opt = {}) => {
+const c = C(q);
+let rows = c.rows;
+if (opt.byCount) rows = [...rows].sort((a, b) => b.n - a.n);
+const top = Math.max(...rows.map((r) => r.n));
+bars(id, rows.map((r) => ({ label: r.o, value: r.n, text: `${r.n}`, tip: `${r.n} von ${c.total} Gästen`, cls: r.n === top && top > 0 ? '' : 'muted' })), { max: c.total || 1 });
+};
+const limits = N.filter((r) => r.q === 'maxprice').map((r) => Number(String(r.value).replace(/\D/g, '')));
+const buyersAt = (p) => (limits.length ? limits.filter((x) => x > p).length / limits.length : 0);
+const mids = N.filter((r) => r.q === 'price').map((r) => { const m = String(r.value).match(/(\d+) bis (\d+)/); return m ? (Number(m[1]) + Number(m[2])) / 2 : null; }).filter((x) => x != null).sort((a, b) => a - b);
+const median = mids.length ? (mids.length % 2 ? mids[(mids.length - 1) / 2] : (mids[mids.length / 2 - 1] + mids[mids.length / 2]) / 2) : null;
+const priceC = C('price'); const maxC = C('maxprice');
+const modeOf = (c) => [...c.rows].sort((a, b) => b.n - a.n)[0];
+const nonalc = C('nonalc'); const minze = C('herb_Minze'); const basil = C('herb_Basilikum');
+const cnt = (c, o) => (c.rows.find((r) => r.o === o) || { n: 0 }).n;
+const de = subs.filter((s) => lang[s] === 'DE').length;
+const last = N.reduce((m, r) => (r.at > m ? r.at : m), '');
+const fmtDate = (iso) => new Date(iso).toLocaleString('de-CH', { day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Zurich' });
+$('hero-meta').textContent = `${n} Antworten (${de} auf Deutsch, ${n - de} auf Englisch) · letzte Antwort am ${fmtDate(last)}`;
+$('method-meta').textContent = `Stand der Daten: ${meta && meta.updatedAt ? fmtDate(meta.updatedAt) : fmtDate(last)}. Quelle: Tally-Formular KY727X.`;
+// Takeaways
+const polar = [...F].sort((a, b) => (b.p1 + b.bottom3) - (a.p1 + a.bottom3)).find((x) => x.p1 >= 2 && x.bottom3 >= 3);
+const herbMsg = `${cnt(minze, 'Besser mit')} von ${minze.total} finden Minze besser, ${cnt(basil, 'Besser mit')} von ${basil.total} Basilikum.`;
+const tk = [
+['', [el('b', {}, `${label(best.f)}`), ` liegt mit Ø Platz ${fmt(best.rank)} vorne, dahinter `, el('b', {}, label(F[1].f)), ` (${fmt(F[1].rank)}) und `, el('b', {}, label(F[2].f)), ` (${fmt(F[2].rank)}).`]],
+['', [el('b', {}, label(mostFirst.f)), ` wurde am häufigsten auf Platz 1 gewählt: ${mostFirst.p1} von ${n} Gästen.`]],
+['warn', [el('b', {}, label(worst.f)), ` landet zuletzt: Ø ${fmt(worst.stars)} Sterne, bei ${worst.bottom3} von ${n} Gästen auf Platz 7 bis 9.`]],
+polar ? ['idea', [el('b', {}, label(polar.f)), ` polarisiert: ${polar.p1} mal Platz 1, aber ${polar.bottom3} mal unter den letzten drei.`]] : null,
+['', [`Wunschpreis im Median `, el('b', {}, `${median} CHF`), ` pro Becher. Bei 16 CHF kaufen noch ${pct(buyersAt(16))}, bei 18 CHF nur noch ${pct(buyersAt(18))}.`]],
+['idea', [herbMsg, ` Alkoholfrei: ${cnt(nonalc, 'Ja')} sagen Ja, ${cnt(nonalc, 'Vielleicht')} Vielleicht.`]],
+].filter(Boolean);
+$('takeaways').replaceChildren(...tk.map(([cls, parts]) => el('li', { class: cls }, parts)));
+const tiles = [
+['Antworten', n, `${de} DE · ${n - de} EN`],
+['Bester Ø Platz', best.f, `Ø ${fmt(best.rank)} von 9`],
+['Am öftesten Platz 1', mostFirst.f, `${mostFirst.p1} von ${n} Gästen`],
+['Wunschpreis Median', `${median} CHF`, `häufigste Spanne ${modeOf(priceC).o}`],
+['Kaufen bei 16 CHF', pct(buyersAt(16)), `bei 18 CHF noch ${pct(buyersAt(18))}`],
+['Alkoholfrei', `${cnt(nonalc, 'Ja') + cnt(nonalc, 'Vielleicht')} / ${nonalc.total}`, `Ja oder Vielleicht`],
+];
+$('tiles').replaceChildren(...tiles.map(([k, v, s]) => el('div', { class: 'tile' }, el('span', { class: 'k' }, k), el('span', { class: 'v' }, v), el('span', { class: 's' }, s))));
+// Flavor charts
+const cls = (f) => (f === best.f ? '' : f === worst.f ? 'bad' : 'muted');
+bars('bars-rank', F.map((x) => ({ label: label(x.f), value: x.rank, text: fmt(x.rank), cls: cls(x.f), tip: `Ø Platz ${fmt(x.rank)} von 9` })), { max: 9 });
+bars('bars-stars', [...F].filter((x) => x.stars != null).sort((a, b) => b.stars - a.stars).map((x) => ({ label: label(x.f), value: x.stars, text: `${fmt(x.stars)} (${x.ratings})`, cls: cls(x.f), tip: `${x.ratings} Bewertungen` })), { max: 5 });
+stacked('bars-top', [...F].sort((a, b) => (b.p1 * 3 + b.p2 * 2 + b.p3) - (a.p1 * 3 + a.p2 * 2 + a.p3)).map((x) => ({
+label: label(x.f), text: x.top3 ? `${x.p1} · ${x.p2} · ${x.p3}` : '0',
+parts: [{ n: 'Platz 1', v: x.p1, c: 'var(--green-deep)' }, { n: 'Platz 2', v: x.p2, c: 'var(--green)' }, { n: 'Platz 3', v: x.p3, c: 'var(--green-soft)' }],
+})));
+const distCol = ['var(--red)', 'var(--red-soft)', '#E9E3D6', 'var(--green-soft)', 'var(--green)'];
+stacked('bars-dist', F.map((x) => ({ label: label(x.f), text: `${x.ratings}`, parts: x.dist.map((v, i) => ({ n: `${i + 1} Sterne`, v, c: distCol[i] })) })));
+const tf = $('tbl-flavors');
+const heads = ['Flavor', 'Ø Platz', 'Ø Sterne', 'Bewertungen', 'Platz 1', 'Top 3', 'Letzte 3', 'Überrascht', 'Nicht deins'];
+tf.replaceChildren(el('thead', {}, el('tr', {}, heads.map((h) => el('th', {}, h)))),
+el('tbody', {}, F.map((x, i) => el('tr', {}, el('td', { class: i === 0 ? 'rank-1 flv' : 'flv' }, label(x.f)), el('td', {}, fmt(x.rank)), el('td', {}, fmt(x.stars)), el('td', {}, x.ratings), el('td', {}, x.p1), el('td', {}, x.top3), el('td', {}, x.bottom3), el('td', {}, x.surprised), el('td', {}, x.notmine)))));
+// Heatmap
+const th = $('tbl-heat');
+const hmax = Math.max(1, ...F.flatMap((x) => CHANGES.map((c) => x.changes[c])));
+th.replaceChildren(el('thead', {}, el('tr', {}, el('th', {}, 'Flavor'), CHANGES.map((c) => el('th', {}, c)))),
+el('tbody', {}, F.map((x) => el('tr', {}, el('td', { class: 'flv' }, label(x.f)), CHANGES.map((c) => {
+const v = x.changes[c];
+const td = el('td', {}, v);
+if (v > 0) { const a = Math.round(18 + (v / hmax) * 62); td.style.background = `color-mix(in srgb, ${c === 'Perfekt so' ? 'var(--green)' : '#E8A13A'} ${a}%, transparent)`; td.style.fontWeight = '600'; }
+else td.className = 'zero';
+return td;
+})))));
+// Choices
+choiceBars('bars-minze', 'herb_Minze');
+choiceBars('bars-basil', 'herb_Basilikum');
+choiceBars('bars-nonalc', 'nonalc');
+choiceBars('bars-price', 'price');
+choiceBars('bars-max', 'maxprice');
+choiceBars('bars-pitcher', 'pitcher');
+choiceBars('bars-where', 'where', { byCount: true });
+choiceBars('bars-when', 'when', { byCount: true });
+choiceBars('bars-many', 'many');
+const prices = [12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22];
+bars('bars-buyers', prices.map((p) => { const s = buyersAt(p); return { label: `${p} CHF`, value: s, text: pct(s), cls: s >= 0.75 ? '' : s >= 0.5 ? 'muted' : 'bad', tip: `${Math.round(s * limits.length)} von ${limits.length} Gästen` }; }), { max: 1 });
+// Texts
+const missing = N.filter((r) => r.q === 'text_missing' && String(r.value).trim());
+$('chips-missing').replaceChildren(...(missing.length ? missing.map((r) => el('span', { class: 'chip' }, String(r.value).trim())) : [el('span', { class: 'note' }, 'Noch keine Wünsche.')]));
+const TAG = { text_flavor: 'Zu einem Flavor', text_other: 'Sonst noch etwas' };
+const quotes = N.filter((r) => TAG[r.q] && String(r.value).trim());
+$('quotes').replaceChildren(...quotes.map((r) => el('div', { class: 'quote' }, el('span', { class: 'tag' }, TAG[r.q] + (r.lang === 'EN' ? ' · EN' : '')), el('p', {}, String(r.value).trim()))));
+// Respondents
+const order = [...subs].sort((a, b) => {
+const ta = (N.find((r) => r.sub === a) || {}).at || ''; const tb = (N.find((r) => r.sub === b) || {}).at || '';
+return ta < tb ? -1 : 1;
+});
+$('people').replaceChildren(...order.map((s, i) => {
+const rows = raw.filter((r) => r.submission === s);
+const mine = N.filter((r) => r.sub === s);
+const tops = [1, 2, 3].map((p) => (mine.find((r) => r.q === 'top' && r.pos === p) || {}).value).filter(Boolean);
+const price = (mine.find((r) => r.q === 'price') || {}).value;
+const at = (mine[0] || {}).at;
+// group raw rows by question in first-seen order
+const qs = [];
+const by = {};
+rows.forEach((r) => { if (!by[r.question]) { by[r.question] = { type: r.type, vals: [] }; qs.push(r.question); } by[r.question].vals.push(r); });
+const dl = el('dl', { class: 'qa' }, qs.map((q) => {
+const g = by[q];
+let val;
+if (g.type === 'RANKING') val = g.vals.sort((a, b) => a.position - b.position).map((r) => `${r.position}. ${clean(r.answer)}`).join(', ');
+else if (g.type === 'RATING') val = '★'.repeat(Number(g.vals[0].answer)) + ` (${g.vals[0].answer})`;
+else val = g.vals.map((r) => String(r.answer)).join(', ');
+return el('div', {}, el('dt', {}, q), el('dd', {}, val));
+}));
+return el('details', { class: 'person' },
+el('summary', {}, el('span', { class: 'p-name' }, `Gast ${i + 1}`), el('span', { class: 'p-meta' }, `${lang[s] === 'EN' ? 'Englisch' : 'Deutsch'} · Top 3: ${tops.join(', ') || '–'} · Becher: ${price || '–'}`), el('span', { class: 'p-meta' }, at ? fmtDate(at) : '')),
+dl);
+}));
+};
+// tally.json is Tally's own answer (API or export), turned into one row per answer and chosen option
+const isId = (v) => typeof v === 'string' && /^[0-9a-f]{8}-[0-9a-f]{4}-/.test(v);
+const toText = (v) => (v && typeof v === 'object' ? (v.text ?? v.label ?? v.name ?? v.value ?? JSON.stringify(v)) : v);
+const toRows = (body) => {
+const d = body && body.data ? body.data : body;
+const qs = new Map((d.questions || []).map((q) => [q.id, q]));
+const rows = [];
+(d.submissions || []).filter((s) => s.isCompleted !== false).forEach((s) => (s.responses || []).forEach((r) => {
+const q = qs.get(r.questionId) || {};
+let a = r.answer;
+if (Array.isArray(a) && a.some(isId) && typeof r.formattedAnswer === 'string') a = r.formattedAnswer.split(/,\s(?=\S)/);
+const list = Array.isArray(a) ? a : [a];
+list.forEach((v, i) => { if (v == null || v === '') return; rows.push({ submission: s.id, submittedAt: s.submittedAt, question: q.label || q.title || r.questionId, type: q.type || '', position: Array.isArray(a) ? i + 1 : null, answer: toText(v) }); });
+}));
+return { rows, updatedAt: d.fetchedAt || null };
+};
+Promise.all([
+fetch('tally.json', { cache: 'no-store' }).then((r) => { if (!r.ok) throw new Error('Antworten nicht gefunden (' + r.status + ')'); return r.json(); }),
+]).then(([body]) => { const t = toRows(body); render(t.rows, { updatedAt: t.updatedAt }); })
+.catch((e) => { $('hero-meta').textContent = 'Die Daten konnten nicht geladen werden.'; $('hero-meta').className = 'hero-meta error'; console.error(e); });
+})();
+</script>
+</body>
+</html>
