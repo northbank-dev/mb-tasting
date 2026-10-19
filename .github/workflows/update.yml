@@ -1,0 +1,56 @@
+name: Daten aktualisieren
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Antworten aus Tally holen
+        env:
+          TALLY_API_KEY: ${{ secrets.TALLY_API_KEY }}
+        run: |
+          cat > fetch.mjs <<'EOF'
+          import { writeFileSync } from 'node:fs';
+          const key = process.env.TALLY_API_KEY;
+          if (!key) throw new Error('Secret TALLY_API_KEY fehlt (Settings > Secrets and variables > Actions).');
+          const all = { questions: [], submissions: [] };
+          for (let page = 1; page <= 20; page++) {
+            const res = await fetch(`https://api.tally.so/forms/KY727X/submissions?filter=completed&limit=500&page=${page}`, {
+              headers: { Authorization: `Bearer ${key}` },
+            });
+            if (!res.ok) throw new Error(`Tally antwortet mit ${res.status}: ${await res.text()}`);
+            const j = await res.json();
+            if (page === 1) all.questions = (j.questions || []).map((q) => ({ id: q.id, type: q.type, label: q.title ?? q.label }));
+            for (const s of j.submissions || []) {
+              all.submissions.push({
+                id: s.id,
+                isCompleted: s.isCompleted,
+                submittedAt: s.submittedAt,
+                responses: (s.responses || []).map((r) => ({ questionId: r.questionId, answer: r.answer, formattedAnswer: r.formattedAnswer })),
+              });
+            }
+            if (!j.hasMore) break;
+          }
+          writeFileSync('tally.json', JSON.stringify({ fetchedAt: new Date().toISOString(), page: 1, hasMore: false, ...all }));
+          console.log(`${all.submissions.length} Antworten gespeichert.`);
+          EOF
+          node fetch.mjs
+
+      - name: Speichern und veröffentlichen
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tally.json
+          if git diff --cached --quiet; then
+            echo "Keine Änderungen."
+          else
+            git commit -m "Daten aktualisiert"
+            git push
+          fi
